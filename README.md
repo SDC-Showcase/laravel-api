@@ -26,29 +26,10 @@ for a full description and demonstration of using the live API (https://ehaloph.
 
 The project follows the standard Laravel directory structure with some additional organization for API-specific functionality. Below is a high-level overview of the directory structure:
 
-├── app/ │
-    ├── Http/ │
-        ├── Controllers/
-        │ └── Api/
-            │ └── V1/
-        ├── Filters/
-        ├── Resources/
-        │ └── V1/
-    ├── Models/
-    │ └── Api/
-        │ └── V1/
-    ├── Policies/
-    │── Traits/
-├── bootstrap/
-├── config/
-├── database/
-├── public/
-├── resources/
-├── routes/
-├── storage/
-├── tests/
-├── vendor/
 
+Filtering to most relevant information
+
+. ├── app/ │ ├── Http/ │ │ ├── Controllers/ │ │ │ └── Api/ │ │ │ └── V1/ │ │ ├── Filters/ │ │ ├── Resources/ │ │ └── Middleware/ │ ├── Models/ │ │ └── Api/ │ │ └── V1/ │ ├── Policies/ │ └── Traits/ ├── bootstrap/ ├── config/ ├── database/ ├── public/ ├── resources/ ├── routes/ ├── storage/ ├── tests/ └── vendor/
 
 ---
 
