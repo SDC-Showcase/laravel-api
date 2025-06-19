@@ -2,9 +2,32 @@
 
 This is a Laravel-based application designed to provide a read-only REST API. Below is an overview of the application's structure and key components.
 
-Please refer to https://documenter.getpostman.com/view/3795325/2sAYkGLzF2
-for a full description and demonstration of using the live API (https://ehaloph.uc.pt/)
+### Overview
 
+This API provides read-only access to plant data, field values, and references. All endpoints return JSON responses and support filtering and pagination where applicable. No authentication is required.
+
+Please refer to https://documenter.getpostman.com/view/3795325/2sAYkGLzF2
+for a full description and demonstration of the endpoints using the live API (https://ehaloph.uc.pt/)
+
+---
+
+### Base URL
+
+```
+https://yourdomain.com/api/v1/
+
+A live example is available (without registration) at https://ehaloph.uc.pt/api/v1/
+
+```
+
+---
+
+
+### Usage Tips
+
+- Use query parameters to filter and paginate results.
+- All endpoints are read-only; no data modification is possible.
+- Refer to the [Postman documentation](https://documenter.getpostman.com/view/3795325/2sAYkGLzF2) for detailed examples and schema.
 
 ---
 
@@ -97,18 +120,7 @@ Contains feature tests for the API:
 
 ## API Endpoints
 
-The API provides the following endpoints:
-
-### Plants
-- `GET /api/v1/plants`: Retrieve a paginated list of plants.
-- `GET /api/v1/plants/{id}`: Retrieve details of a specific plant.
-
-### Field Values
-- `GET /api/v1/fieldvalues/{fieldName}`: Retrieve values for a specific field.
-
-### References
-- `GET /api/v1/references`: Retrieve a paginated list of references.
-- `GET /api/v1/references/{id}`: Retrieve details of a specific reference.
+Please refer to https://documenter.getpostman.com/view/3795325/2sAYkGLzF2 for detailed API documentation and examples.
 
 ---
 
@@ -161,6 +173,9 @@ The application uses environment variables and configuration files to manage set
 ## Testing
 
 Feature tests are located in the `tests/Feature/` directory. These tests ensure the API endpoints function as expected.
+
+   php artisan test --parallel
+   (leverages multiple processes to run tests in parallel - brianium/paratest)
 
 ---
 

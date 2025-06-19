@@ -7,7 +7,6 @@ use App\Models\EhalophField;
 class PlantFilter extends QueryFilter {
     protected $sortable = [
         'id',
-        'ja_id',
     ];
 
 

@@ -2,9 +2,7 @@
 
 namespace App\Models\Api\V1;
 
-
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 use App\Models\Api\V1\ApiValue;
 use App\Models\Api\V1\ApiPlant;

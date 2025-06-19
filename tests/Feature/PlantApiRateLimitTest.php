@@ -156,12 +156,14 @@ class PlantApiRateLimitTest extends TestCase
                 $this->markTestSkipped('Retry-After value too small to test partial waiting: ' . $retryAfter . ' seconds');
             }
 
+
             // Wait the full time plus a small buffer
             sleep($retryAfter + 1);
 
             // Request should now be allowed
             $fullWaitResponse = $this->get($this->baseUrl . "/plants/{$this->plant_id}");
             $this->assertEquals(200, $fullWaitResponse->status(), 'Request should be allowed after respecting Retry-After');
+
 
         } else {
             $this->markTestSkipped('Rate limit response does not include Retry-After header.');

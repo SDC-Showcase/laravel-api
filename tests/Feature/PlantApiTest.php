@@ -22,6 +22,40 @@ class PlantApiTest extends TestCase
         $response->assertHeader('Content-Type', 'application/json');
     }
 
+    public function testMultipleEndpoints()
+    {
+        $endpoints = [
+            '/plants',
+            '/plants/13597',
+            '/fields',
+            '/references',
+            '/references/1',
+            '/plants?distribution_text=*North*',
+            '/plants?author=*Mill*&species=latifolia',
+            '/plants?author=*Mill*&glands=unknown&distribution_text=*Tropical America*',
+            '/plants?date=2023-10-03',
+            '/plants?updated_at=2024-01-25',
+            '/plants?date=2023-10-03,2024-12-23',
+            '/plants?updated_at=2024-01-01,2025-09-05',
+            '/plants?sort=genus',
+        ];
+
+       foreach ($endpoints as $endpoint) {
+            $response = $this->get($this->baseUrl . $endpoint);
+
+            // Check if 'data' exists in the JSON response
+            $json = $response->json();
+            if (!array_key_exists('data', $json)) {
+                $this->fail("Failed asserting that endpoint {$endpoint} returned JSON with a 'data' attribute. Response content: " . json_encode($json));
+            }
+
+            // Assert the response status is 200
+            $response->assertStatus(200);
+
+        }
+    }
+
+
     /**
      * Test the structure of the response.
      *

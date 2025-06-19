@@ -2,8 +2,6 @@
 
 namespace App\Http\Resources\V1;
 
-
-use ApiReferencesPivot;
 use App\Http\Controllers\EhalophReferenceController;
 use App\Models\Api\V1\ApiField;
 
@@ -149,13 +147,9 @@ class PlantResource extends JsonResource
             // Handle fields with no values but with references
             if (empty($values) && $fieldsWithReferencesOnly->contains($fieldId)) {
                 $fieldData = [
-                    // 'id' => $field->id,
-                    // 'position' => $field->position,
                     'name' => $field->name,
                     'question' => $field->question,
-                    // 'type' => $field->type,
                     'value' => null,
-                    // 'references' => []
                 ];
 
                 // Find all references for this field
@@ -185,11 +179,8 @@ class PlantResource extends JsonResource
                 $refKey = $fieldId . '_' . $position;
 
                 $fieldValueData = [
-                    // 'id' => $field->id,
-                    // 'position' => $field->position,
                     'name' => $field->name,
                     'question' => $field->question,
-                    // 'type' => $field->type,
                 ];
 
                 // Safely handle tree values without lazy loading
