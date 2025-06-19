@@ -17,7 +17,6 @@ for a full description and demonstration of using the live API (https://ehaloph.
 - [Controllers](#controllers)
 - [Resources](#resources)
 - [Filters](#filters)
-- [Policies](#policies)
 - [Configuration](#configuration)
 
 ---
@@ -38,7 +37,6 @@ The project follows the standard Laravel directory structure with some additiona
         ├── Models/
         │ └── Api/
             │ └── V1/
-        ├── Policies/
         │── Traits/
     ├── bootstrap/
     ├── config/
@@ -148,12 +146,6 @@ Filters are used to apply query parameters to database queries. Key filters incl
 - **`PlantFilter`**: Filters plant data based on query parameters.
 - **`ReferenceFilter`**: Filters reference data based on query parameters.
 
----
-
-## Policies
-
-Policies define authorization logic for API resources. Key policies include:
-- **`PlantPolicy`**: Authorization logic for plant-related actions.
 
 ---
 

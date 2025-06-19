@@ -5,12 +5,10 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Filters\V1\PlantFilter;
 use App\Models\Api\V1\ApiPlant;
 use App\Http\Resources\V1\PlantResource;
-use App\Policies\V1\PlantPolicy;
 
 class PlantController extends ApiController
 {
 
-    protected $policyClass = PlantPolicy::class;
     /**
      * Get all plants
      *

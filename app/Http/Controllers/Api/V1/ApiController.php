@@ -12,23 +12,7 @@ use Illuminate\Support\Facades\Http;
 
 class ApiController extends Controller
 {
-    use ApiResponses;
 
-    /**
-     * Handle the incoming request to test API functionality.
-     *
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
-     * @throws AuthenticationException
-     * @throws AuthorizationException
-     */
-    public function apitest(Request $request) {
-        $user = User::find(1);
-        if ($user) {
-            return $this->success(['message' => 'API is working', 'user' => $user]);
-        } else {
-            return $this->error('User not found', 404);
-        }
-    }
+    use ApiResponses;
 
 }

@@ -9,10 +9,8 @@ use App\Models\EhalophRecord;
 
 class FieldValuesController extends ApiController
 {
-    protected $policyClass = PlantPolicy::class;
 
     public function getFieldValues($fieldName) {
-
 
         // get all the configured field names
         $fieldNames = ApiField::select('name')->get();
