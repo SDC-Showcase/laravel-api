@@ -38,14 +38,4 @@ Route::middleware('throttle:120,1')->group(function () {
     Route::apiResource('references', ReferenceController::class)->except(['show']);
 
 
-    // PEST - debug route to see how Laravel is resolving the client IP
-    Route::get('/debug-ip', function (Request $request) {
-        return [
-            'ip' => $request->ip(),
-            'ips' => $request->ips(),
-            'headers' => $request->headers->all(),
-            'server' => $_SERVER,
-        ];
-    });
-
 });
