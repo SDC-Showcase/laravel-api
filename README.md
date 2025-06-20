@@ -9,6 +9,18 @@ This API provides read-only access to plant data, field values, and references. 
 Please refer to https://documenter.getpostman.com/view/3795325/2sAYkGLzF2
 for a full description and demonstration of the endpoints using the live API (https://ehaloph.uc.pt/)
 
+
+### Rate Limiting
+
+The API implements rate limiting to ensure fair usage and prevent abuse. By default, the API allows up to **120 requests per minute** per client. If the limit is exceeded, the client will receive a `429 Too Many Requests` response.
+
+#### Key Details:
+- **Limit**: 120 requests per minute.
+- **Response on Exceeding Limit**: HTTP status code `429 Too Many Requests`.
+- **Retry-After Header**: The response includes a `Retry-After` header indicating the time (in seconds) the client should wait before making further requests.
+
+This rate limiting is applied globally to all API routes using the `throttle` middleware.
+
 ---
 
 ### Base URL
